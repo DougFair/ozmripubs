@@ -1,0 +1,39 @@
+.paperlistContainer {
+    margin-bottom: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.title {
+    font-weight: 700
+}
+
+.paperDisplay {
+    margin: 10px 20px 5px 20px
+}
+
+.journal {
+    text-transform: capitalize;
+    font-style: italic;
+    color: red
+}
+
+.dateHeading {
+    display:flex;
+    align-items: center;
+    margin-left:50px;
+}
+
+.volume {
+    font-style: italic;
+}
+
+.totalpapers{
+    color: steelblue;
+    font-weight: 500;
+    font-size: 1.2rem
+}
+
+.noPapers {
+    margin-left:50px;  
+}

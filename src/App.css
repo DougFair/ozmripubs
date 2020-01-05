@@ -1,0 +1,8 @@
+.instituteTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    color: orange;
+    text-align: center;
+    margin-top: 5px;
+}
