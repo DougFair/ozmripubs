@@ -11,7 +11,7 @@ const ResetButton = (props) => {
         <div className="reset">
         <button className="resetButton" onClick={clickHandler}>RESET</button>
         <span><p style={{marginLeft: "10px", fontWeight:"600"}}>
-      Reset to the last 7 days</p>
+      Reset dates to the last 7 days</p>
         </span>
         </div>
     )

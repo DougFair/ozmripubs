@@ -8,9 +8,9 @@ const PapersDisplay = (props) => {
 
     if((props.inputedDate1 || props.inputedDate2) &&!props.idlistSelected.length) {
     heading =
-      <div className="noPapers">
+      <div>
       {!props.inputedDate2 ? 
-       <p>There were no papers published at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
+       <p className="noPapers">There were no papers published at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
       : 
       <p className="noPapers">There were no papers published at {props.selectedInstitute} between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
       }
@@ -21,12 +21,12 @@ const PapersDisplay = (props) => {
       heading = 
       <div>
       {!props.inputedDate2 ? 
-          <div className="dateHeading" >
-          <h2>Papers published since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+          <div>
+          <h2 className="dateHeading">Papers published since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
           </div>
           :
-          <div className="dateHeading">
-          <h2>Papers published between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+          <div>
+          <h2 className="dateHeading">Papers published between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
           </div>
           }
       </div>
@@ -43,7 +43,7 @@ const PapersDisplay = (props) => {
   } else if (!props.selectedInstitute){
     heading = 
     <div className="paperDisplay">        
-    {<h2>Papers published in the last 7 days <span className="totalpapers">({props.papersList.length} in total)</span></h2>}
+    {<h2>Papers in the last 7 days <span className="totalpapers">({props.papersList.length} in total)</span></h2>}
     {!props.papersList.length && 
     <p className="noPapers">There were no papers published at any Australian MRI in the last 7 days.</p>
     }

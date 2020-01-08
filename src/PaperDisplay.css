@@ -9,6 +9,7 @@
 }
 
 .paperDisplay {
+    text-align: center;
     margin: 10px 20px 5px 20px
 }
 
@@ -19,18 +20,14 @@
 }
 
 .dateHeading {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 50px;
-    border: 1px solid yellow;
+    text-align: center;
+    margin: 25px 50px;
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
     .dateHeading {
-        margin: 0px 20px;
-        border: 1px solid green;
+        margin: 25px 20px;;
     }
 }
 
@@ -46,10 +43,13 @@
 
 .noPapers {
     text-align: center;
-    margin:10px 20px;  
+    margin:10px 20px;
+    font-size: 1.15rem; 
+    font-style: italic;
+    font-weight: 400;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 720px) {
     .noPapers {
         text-align: justify;
     }

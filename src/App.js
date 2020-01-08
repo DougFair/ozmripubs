@@ -191,7 +191,7 @@ getIdList = () => {
 
 instituteSelect = (institute) => {
   if (institute === "All") {
-    this.setState({loading: true, selectedInstitute: ""}, () => {this.addPapers()})
+    this.setState({loading: true, selectedInstitute: "", inputedDate1: "", inputedDate2: ""}, () => {this.addPapers()})
   } else {
   this.setState({loading: true, selectedInstitute: institute}, () => {
       this.getIdList()
