@@ -21,7 +21,17 @@
 .dateHeading {
     display:flex;
     align-items: center;
-    margin-left:50px;
+    justify-content: center;
+    margin: 0 50px;
+    border: 1px solid yellow;
+}
+
+
+@media screen and (max-width: 500px) {
+    .dateHeading {
+        margin: 0px 20px;
+        border: 1px solid green;
+    }
 }
 
 .volume {
@@ -35,5 +45,12 @@
 }
 
 .noPapers {
-    margin-left:50px;  
+    text-align: center;
+    margin:10px 20px;  
+}
+
+@media (max-width: 540px) {
+    .noPapers {
+        text-align: justify;
+    }
 }

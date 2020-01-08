@@ -10,9 +10,9 @@ const PapersDisplay = (props) => {
     heading =
       <div className="noPapers">
       {!props.inputedDate2 ? 
-       <h2>No papers published  at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}</h2>
+       <p>There were no papers published at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
       : 
-      <h2 className="noPapers">No papers published at {props.selectedInstitute} between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")}</h2>
+      <p className="noPapers">There were no papers published at {props.selectedInstitute} between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
       }
     </div>
   } else {
@@ -22,11 +22,11 @@ const PapersDisplay = (props) => {
       <div>
       {!props.inputedDate2 ? 
           <div className="dateHeading" >
-          <h2>Papers published at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+          <h2>Papers published since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
           </div>
           :
           <div className="dateHeading">
-          <h2>Papers published at {props.selectedInstitute} between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+          <h2>Papers published between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
           </div>
           }
       </div>
@@ -38,14 +38,14 @@ const PapersDisplay = (props) => {
     </div>
      } else {
      heading = 
-    <p>There were no papers published at {props.selectedInstitute} in the last 7 days.</p>
+    <p className="noPapers">There were no papers published at {props.selectedInstitute} in the last 7 days.</p>
     }
   } else if (!props.selectedInstitute){
     heading = 
     <div className="paperDisplay">        
-    {<h2 style={{color: "orange", marginTop: "10px"}}>All papers published at Australian MRIs in the last 7 days  <span className="totalpapers">({props.papersList.length} in total)</span></h2>}
+    {<h2>Papers published in the last 7 days <span className="totalpapers">({props.papersList.length} in total)</span></h2>}
     {!props.papersList.length && 
-    <p>There were no papers published at any Australian MRI in the last 7 days.</p>
+    <p className="noPapers">There were no papers published at any Australian MRI in the last 7 days.</p>
     }
     </div>
   }
