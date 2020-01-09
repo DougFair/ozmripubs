@@ -251,7 +251,11 @@ apiReset = () => {
               {this.state.selectedInstitute ?
               <h1 className="instituteTitle">{this.state.selectedInstitute}</h1>
               :
-              <h1 className="instituteTitle">All Australian MRIs</h1>}
+              <div>
+              <h1 className="instituteTitle">All Australian MRIs</h1>
+              <p className="instituteTitleSubHeading">Select a specific MRI or specify search dates above</p>
+              </div>
+              }
               {papersDisplay}
             </div>
             </>
