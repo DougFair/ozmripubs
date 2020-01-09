@@ -10,7 +10,7 @@ const PapersDisplay = (props) => {
     heading =
       <div>
       {!props.inputedDate2 ? 
-       <p className="noPapers">There were no papers published at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
+       <p className="noPapers">There have been no papers published at {props.selectedInstitute} since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
       : 
       <p className="noPapers">There were no papers published at {props.selectedInstitute} between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")}.</p>
       }
