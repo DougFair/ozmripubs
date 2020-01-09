@@ -78,8 +78,7 @@ class DateInput extends Component {
                     </div>   
                 </form>
                 <div className="titleInstruct" >
-                    <p>You must enter a Start Date. </p>
-                    <p>End Date will default to today.</p>
+                    <p>You must enter a Start Date. End Date will default to today.</p>
                 </div>
             </div>
         </div>

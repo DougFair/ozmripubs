@@ -22,19 +22,22 @@ const PapersDisplay = (props) => {
       <div>
       {!props.inputedDate2 ? 
           <div>
-          <h2 className="dateHeading">Papers published since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+          <h2 className="dateHeading">Papers published since {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")}</h2>
+          <h2 className="totalpapers">({props.papersList.length} in total)</h2>
           </div>
           :
           <div>
-          <h2 className="dateHeading">Papers published between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")} <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+          <h2 className="dateHeading">Papers published between {moment(props.inputedDate1, "YYYY-MM-DD").format("DD/MM/YYYY")} - {moment(props.inputedDate2, "YYYY-MM-DD").format("DD/MM/YYYY")} </h2>
+          <h2 className="totalpapers">({props.papersList.length} in total)</h2>
           </div>
           }
       </div>
   } else if (props.selectedInstitute){
      if (props.papersList.length) { 
     heading = 
-    <div className="paperDisplay">        
-    <h2>Papers in last the 7 days <span className="totalpapers">({props.papersList.length} in total)</span></h2>
+    <div>        
+    <h2 className="dateHeading">Papers in last the 7 days</h2>
+    <h2 className="totalpapers">({props.papersList.length} in total)</h2>
     </div>
      } else {
      heading = 
@@ -42,8 +45,11 @@ const PapersDisplay = (props) => {
     }
   } else if (!props.selectedInstitute){
     heading = 
-    <div className="paperDisplay">        
-    {<h2>Papers in the last 7 days <span className="totalpapers">({props.papersList.length} in total)</span></h2>}
+    <div>        
+    {<div>
+      <h2 className="dateHeading">Papers in the last 7 days</h2>
+      <h2 className="totalpapers">({props.papersList.length} in total)</h2>
+    </div>}
     {!props.papersList.length && 
     <p className="noPapers">There were no papers published at any Australian MRI in the last 7 days.</p>
     }
