@@ -71,6 +71,7 @@ if (props.papersList.length) {
       <span>
         <span className="title">{`${data.title} `}</span>
         <span className="authors">{`${data.authors}, `}</span>
+        <span className="year">{`(${data.pubdate}), `}</span>
         <span className="journal">{`${data.journal},  `}</span>
         <span className="volume">{`${volume} `}</span>
         <span className="pages">{`${data.pages},  `}</span>

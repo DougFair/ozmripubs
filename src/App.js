@@ -9,6 +9,7 @@ import WelcomeBanner from './WelcomeBanner'
 import Toolbar from "./Toolbar"
 import {Route, Switch} from 'react-router-dom'
 import {splitInstitutes} from './institutes'
+import SubHeading from './SubHeading'
 import ResetButton from "./ResetButton"
 import ApiError from "./ApiError"
 import Contact from './Contact'
@@ -29,7 +30,6 @@ class App extends Component {
     selectedInstitute: "",
     allInstituteList: [],
     apiError: false,
-    idlistToDisplay: []
   }
 
   componentDidMount () {
@@ -121,7 +121,12 @@ getIdList = () => {
     this.setState({loading: true})
     let idlistToDisplay=[]  
     if (this.state.selectedInstitute) {
-      idlistToDisplay = this.state.idlistSelected
+      if (this.state.idlistSelected.length > 2000) {
+        alert("Your search returned: " + this.state.idlistSelected.length + " papers. All papers beyond the 2000th have been removed. If you want to see more papers in that date range, please perform separate searches using closer start and end dates.")
+        idlistToDisplay = this.state.idlistSelected.slice(0,2000) 
+      } else {
+        idlistToDisplay = this.state.idlistSelected
+      } 
     } else {
       idlistToDisplay = this.state.idlistAll
     }
@@ -154,8 +159,7 @@ getIdList = () => {
                 let  pages = myObj[key].pages
                 let  doi = myObj[key].elocationid
                 let  authors = myObj[key].authors
-                let  pubdate = myObj[key].pubdate 
-              
+                let  pubdate = myObj[key].pubdate.slice(0,4) 
               let authorList = []
               authors.map((author, idx) =>
               idx > 0
@@ -241,6 +245,7 @@ apiReset = () => {
               dateInput = {this.dateInput}
               instituteSelect = {this.instituteSelect}
             /> 
+            <SubHeading />  
             {this.state.inputedDate1 &&
             <ResetButton 
               resetDates = {this.resetDates}
