@@ -256,7 +256,7 @@ apiReset = () => {
               {this.state.selectedInstitute ?
               <div>
               <h1 className="instituteTitle">{this.state.selectedInstitute}</h1>
-              <p className="instituteTitleSubHeading">Specify search dates above</p>
+              <p className="instituteTitleSubHeading">Customise search dates above</p>
               </div>
               :
               <div>
